@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-
+import '../page/details.dart';
 class SliverDemo extends StatelessWidget {
- 
+ final snackBar= SnackBar(
+      content: new Text('Welcom!'),
+      backgroundColor: Colors.pink,
+      duration: Duration(milliseconds: 2000),
+    );
+  void sc(context){
+    Scaffold.of(context).showSnackBar(snackBar);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +51,8 @@ class _sliverListDemo extends StatelessWidget {
               'https://img.zcool.cn/community/0102185ce749f5a801208f8b6d8c67.png@1280w_1l_2o_100sh.png',
               'https://img.zcool.cn/community/011a215ce749f5a801214168546aec.png@1280w_1l_2o_100sh.png',
               'https://img.zcool.cn/community/0157765ce749f5a801208f8b4c5922.png@1280w_1l_2o_100sh.png'];
+
+    List name=['https','//img.','zcool','.cn','community','0102185ce749f5a','https','//img.','zcool','.cn','community','0102185ce749f5a'];
   @override
   Widget build(BuildContext context) {
     return SliverList(
@@ -64,13 +73,19 @@ class _sliverListDemo extends StatelessWidget {
                 Positioned(
                   top: 20,
                   left: 20,
-                  child: Text("dsalkjd".toUpperCase(),style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                  child: Text(name[index],style: TextStyle(color: Colors.white,fontSize: 20.0),),
                 ),
                 Positioned.fill(
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: (){},
+                      highlightColor: Colors.pink.withOpacity(0.8),
+                      splashColor: Colors.white,
+                      onTap: (){
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context)=> Details(title: name[index],))
+                        );
+                      },
                     ),
                   ),
                 )
