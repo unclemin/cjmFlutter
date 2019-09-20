@@ -4,6 +4,8 @@ import './page/index.dart';
 import './page/sliver_demo.dart';
 import './page/nav.dart';
 import './page/formDemo.dart';
+import './page/btn.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/':(context) => FormDemo(),
+        '/':(context) => BtnDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
