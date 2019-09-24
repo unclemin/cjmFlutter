@@ -42,8 +42,8 @@ class _smailDilogState extends State<smailDilog> {
        a =open;
     });
   }
-  _shows(){
-    showDialog(
+  _shows() async{
+  final b =  await showDialog(
       context: context,
       builder: (context){
         return AlertDialog(
@@ -53,15 +53,28 @@ class _smailDilogState extends State<smailDilog> {
             FlatButton.icon(
               icon: Icon(Icons.info),
               label: Text("ok"),
+              onPressed: (){
+                Navigator.of(context).pop(1);
+              },
+              
             ),
             FlatButton.icon(
               icon: Icon(Icons.info),
               label: Text("quxiao"),
+              onPressed: (){
+                Navigator.of(context).pop(2);
+              },
             ),
           ],
         );
       }
     );
+    switch (b) {
+      case 1:
+        print(b);
+        break;
+      default:
+    }
   }
   @override
   Widget build(BuildContext context) {

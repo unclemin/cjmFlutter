@@ -7,7 +7,14 @@ import './slider.dart';
 import './dateTime.dart';
 import './smailDiolg.dart';
 import './formDemo.dart';
-
+import './bootomShat.dart';
+import './snackBar.dart';
+import './expantion.dart';
+import './chipDemo.dart';
+import './datatable.dart';
+import './pagedatatable.dart';
+import './cardDemo.dart';
+import './http.dart';
 
 class BtnDemo extends StatelessWidget {
   @override
@@ -31,6 +38,15 @@ class BtnDemo extends StatelessWidget {
         Listitem(title: "slider",page:slider(),),
         Listitem(title: "detaTiem",page:dateTime(),),
         Listitem(title: "smailDiolg",page:smailDilog(),),
+        Listitem(title: "bottomShat",page:bottomShat(),),
+        Listitem(title: "snackBar",page:Snack(),),
+        Listitem(title: "expantion",page:ExpansionPanelDemo(),),
+        Listitem(title: "chipDemo",page:ChipDemo(),),
+        Listitem(title: "DataTable",page:DateTable(),),
+        Listitem(title: "PageDateTable",page:PaginatedDataTableDemo(),),
+        Listitem(title: "CardDemo",page:CardDemo(),),
+        Listitem(title: "https",page:Http(),),
+
       ],),
     );
   }
